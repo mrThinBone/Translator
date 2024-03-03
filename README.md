@@ -12,3 +12,7 @@ This is a Kotlin Multiplatform project targeting Android, iOS.
 
 
 Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html)…
+
+https://github.com/icerockdev/moko-mvvm
+https://cashapp.github.io/sqldelight/1.5.5/multiplatform_sqlite/
+#https://github.com/coil-kt/coil/issues/842
