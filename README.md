@@ -16,3 +16,5 @@ Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-mu
 https://github.com/icerockdev/moko-mvvm
 https://cashapp.github.io/sqldelight/1.5.5/multiplatform_sqlite/
 #https://github.com/coil-kt/coil/issues/842
+https://insert-koin.io/docs/reference/koin-mp/kmp/
+https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-images-resources.html#resource-usage
