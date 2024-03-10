@@ -1,3 +1,5 @@
+package org.example.translator
+
 import android.app.Application
 import core.data.local.DatabaseDriverFactory
 

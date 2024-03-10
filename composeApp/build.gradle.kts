@@ -1,5 +1,3 @@
-import org.jetbrains.compose.desktop.application.dsl.TargetFormat
-
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidApplication)
@@ -35,7 +33,6 @@ kotlin {
         androidMain.dependencies {
             implementation(libs.compose.ui.tooling.preview)
             implementation(libs.androidx.activity.compose)
-            implementation(libs.androidx.lifecycle.viewmodel.compose)
 
             implementation(libs.ktor.client.okhttp)
 
@@ -50,6 +47,7 @@ kotlin {
             implementation(compose.ui)
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
+            implementation(libs.androidx.lifecycle.viewmodel.compose)
 
             implementation(libs.coil)
             implementation(libs.coil.compose)
@@ -63,6 +61,7 @@ kotlin {
             implementation(libs.kotlinx.coroutines.core)
 
             implementation(libs.koin.core)
+            implementation(libs.koin.compose)
             implementation(libs.koin.test)
         }
         iosMain.dependencies {

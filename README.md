@@ -18,3 +18,4 @@ https://cashapp.github.io/sqldelight/1.5.5/multiplatform_sqlite/
 #https://github.com/coil-kt/coil/issues/842
 https://insert-koin.io/docs/reference/koin-mp/kmp/
 https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-images-resources.html#resource-usage
+https://medium.com/@j.c.moreirapinto/simplifying-cross-platform-app-development-dependency-injection-with-koin-in-compose-multiplatform-f77595396fbc
