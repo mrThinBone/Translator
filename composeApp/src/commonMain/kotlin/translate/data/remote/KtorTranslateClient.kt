@@ -1,4 +1,4 @@
-package translate.data.translate
+package translate.data.remote
 
 import NetworkConstant
 import core.domain.language.Language
@@ -9,6 +9,8 @@ import io.ktor.client.request.setBody
 import io.ktor.http.ContentType
 import io.ktor.http.contentType
 import okio.IOException
+import translate.data.translate.TranslateDto
+import translate.data.translate.TranslatedDto
 import translate.domain.translate.TranslateClient
 import translate.domain.translate.TranslateError
 import translate.domain.translate.TranslateException

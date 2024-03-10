@@ -35,10 +35,13 @@ kotlin {
         androidMain.dependencies {
             implementation(libs.compose.ui.tooling.preview)
             implementation(libs.androidx.activity.compose)
+            implementation(libs.androidx.lifecycle.viewmodel.compose)
 
             implementation(libs.ktor.client.okhttp)
 
             implementation(libs.sqldelight.android)
+
+            implementation(libs.koin.android)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -58,6 +61,9 @@ kotlin {
             implementation(libs.ktor.client.serialization)
             implementation(libs.ktor.client.serialization.json)
             implementation(libs.kotlinx.coroutines.core)
+
+            implementation(libs.koin.core)
+            implementation(libs.koin.test)
         }
         iosMain.dependencies {
             implementation(libs.ktor.client.darwin)

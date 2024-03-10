@@ -1,9 +1,11 @@
-package translate.data.local
+package core.data.local
 
 import com.squareup.sqldelight.db.SqlDriver
 
 expect class DatabaseDriverFactory {
 
-    fun create(): SqlDriver
+    companion object {
+        fun create(): SqlDriver
+    }
 
 }

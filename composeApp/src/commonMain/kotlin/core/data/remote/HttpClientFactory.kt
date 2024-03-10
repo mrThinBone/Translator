@@ -1,4 +1,4 @@
-package translate.data.remote
+package core.data.remote
 
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
