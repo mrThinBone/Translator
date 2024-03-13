@@ -11,9 +11,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.State
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalClipboardManager
+import androidx.compose.ui.platform.LocalSoftwareKeyboardController
+import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.unit.dp
 import translate.presentation.components.LanguageDropDown
 import translate.presentation.components.SwapLanguagesButton
+import translate.presentation.components.TranslateTextField
 
 @Composable
 fun TranslateScreen(
@@ -71,7 +75,50 @@ fun TranslateScreen(
                         }
                     )
                 }
-            }
+            } // first item block
+            item {
+                val clipboardManager = LocalClipboardManager.current
+                val keyboardController = LocalSoftwareKeyboardController.current
+                TranslateTextField(
+                    fromText = state.value.fromText,
+                    toText = state.value.toText,
+                    isTranslating = state.value.isTranslating,
+                    fromLanguage = state.value.fromLanguage,
+                    toLanguage = state.value.toLanguage,
+                    onTranslateClick = {
+                        keyboardController?.hide()
+                        onEvent(TranslateEvent.Translate)
+                    },
+                    onTextChange = {
+                        onEvent(TranslateEvent.ChangeTranslationText(it))
+                    },
+                    onCopyClick = { text ->
+                        clipboardManager.setText(
+                            buildAnnotatedString {
+                                append(text)
+                            }
+                        )
+                        // TODO: show toast
+                        /*Toast.makeText(
+                            context,
+                            context.getString(
+                                com.plcoding.translator_kmm.android.R.string.copied_to_clipboard
+                            ),
+                            Toast.LENGTH_LONG
+                        ).show()*/
+                    },
+                    onCloseClick = {
+                        onEvent(TranslateEvent.CloseTranslation)
+                    },
+                    onSpeakerClick = {
+
+                    },
+                    onTextFieldClick = {
+                        onEvent(TranslateEvent.EditTranslation)
+                    },
+                    modifier = Modifier.fillMaxWidth()
+                )
+            } // second item block
         }
     }
 }

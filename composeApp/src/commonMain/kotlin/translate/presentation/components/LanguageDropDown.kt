@@ -1,5 +1,3 @@
-@file:OptIn(ExperimentalResourceApi::class)
-
 package translate.presentation.components
 
 import androidx.compose.foundation.Image
@@ -30,6 +28,7 @@ import translator.composeapp.generated.resources.Res
 import translator.composeapp.generated.resources.close
 import translator.composeapp.generated.resources.open
 
+@OptIn(ExperimentalResourceApi::class)
 @Composable
 fun LanguageDropDown(
     language: UiLanguage,

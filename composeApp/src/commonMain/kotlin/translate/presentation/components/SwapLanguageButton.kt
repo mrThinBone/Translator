@@ -1,5 +1,3 @@
-@file:OptIn(ExperimentalResourceApi::class)
-
 package translate.presentation.components
 
 import androidx.compose.foundation.background
@@ -16,6 +14,7 @@ import org.jetbrains.compose.resources.stringResource
 import translator.composeapp.generated.resources.Res
 import translator.composeapp.generated.resources.swap_languages
 
+@OptIn(ExperimentalResourceApi::class)
 @Composable
 fun SwapLanguagesButton(
     onClick: () -> Unit,
