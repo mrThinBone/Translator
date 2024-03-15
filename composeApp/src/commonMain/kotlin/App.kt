@@ -4,12 +4,13 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Shapes
 import androidx.compose.material.Typography
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import cafe.adriel.voyager.navigator.Navigator
+import cafe.adriel.voyager.transitions.SlideTransition
 import core.theme.darkColors
 import core.theme.lightColors
 import di.commonModule
@@ -17,13 +18,8 @@ import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.Font
 import org.jetbrains.compose.ui.tooling.preview.Preview
 import org.koin.compose.KoinApplication
-import org.koin.compose.koinInject
 import translate.di.translateModule
-import translate.domain.history.HistoryDataSource
-import translate.domain.translate.TranslateUseCase
 import translate.presentation.TranslateScreen
-import translate.presentation.TranslateViewModel
-import translate.presentation.provideTranslateViewModel
 import translator.composeapp.generated.resources.Res
 import translator.composeapp.generated.resources.sf_pro_text_bold
 import translator.composeapp.generated.resources.sf_pro_text_medium
@@ -101,10 +97,10 @@ fun MainContent() {
             large = RoundedCornerShape(0.dp)
         )
     ) {
-        val useCase = koinInject<TranslateUseCase>()
-        val historyDataSource = koinInject<HistoryDataSource>()
-        val viewModel: TranslateViewModel = provideTranslateViewModel(useCase, historyDataSource)
 
-        TranslateScreen(viewModel.state.collectAsState()) { event -> viewModel.onEvent(event) }
+        Navigator(screen = TranslateScreen()) { navigator ->
+            SlideTransition(navigator)
+        }
+
     }
 }

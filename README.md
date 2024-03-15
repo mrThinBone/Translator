@@ -19,3 +19,12 @@ https://cashapp.github.io/sqldelight/1.5.5/multiplatform_sqlite/
 https://insert-koin.io/docs/reference/koin-mp/kmp/
 https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-images-resources.html#resource-usage
 https://medium.com/@j.c.moreirapinto/simplifying-cross-platform-app-development-dependency-injection-with-koin-in-compose-multiplatform-f77595396fbc
+
+navigation: https://voyager.adriel.cafe/
+viewModel for iOS: https://voyager.adriel.cafe/screenmodel
+
+todo:
+_ speech to text
+_ translate api
+_ show toast (string resource?)
+_ testing

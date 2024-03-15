@@ -19,8 +19,8 @@ import translate.domain.translate.TranslateUseCase
 
 open class TranslateViewModelHandler(
     private val useCase: TranslateUseCase,
-    private val historyDataSource: HistoryDataSource,
-    private val coroutineScope: CoroutineScope?,
+    historyDataSource: HistoryDataSource,
+    coroutineScope: CoroutineScope?,
 ) {
     private val viewModelScope = coroutineScope ?: CoroutineScope(Dispatchers.Main)
 
